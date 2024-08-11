@@ -31,6 +31,99 @@
             text-decoration: none;
             color: inherit;
         }
+        .download-btn {
+            padding: 15px 30px;
+            color: #fff;
+            background: linear-gradient(135deg, #6e69a2, #c355ff);
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: inline-block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .download-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: -1;
+            transform: scale(0);
+            transition: transform 0.5s ease;
+            border-radius: 50px;
+        }
+
+        .download-btn:hover:before {
+            transform: scale(2);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .download-btn:active {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        .logo-container {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            margin: 5px auto;
+            background: linear-gradient(135deg, #0000ff, #8a2be2);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Inner circle for the photo */
+        .logo-photo-placeholder {
+            width: 60px;
+            height: 60px;
+            background-color: #d3d3d3;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Placeholder image styling */
+        .logo-photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Banner at the bottom */
+        .logo-banner {
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #b0c4de;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 8px;
+            text-transform: uppercase;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 
@@ -44,9 +137,16 @@
             <div class="col-lg-2 col-6">
                 <div class="header-left">
                     <div class="logo">
-                        <a href="index.html">
-                           Om Mangesh Kuman<!-- <img src="assets/images/logo/logo.png" alt="logo">-->
-                        </a>
+                        <div class="logo-container">
+                           <div class="logo-photo-placeholder">
+                                 <!--Replace 'your-photo.jpg' with the path to your actual photo -->
+                                <img src="assets/images/logo/omedit.jpg">
+                            </div>
+                            <div class="logo-banner">Om Kuman</div>
+                        </div>
+                        <!--<a href="index.html">
+                         Mangesh Kuman <img src="assets/images/logo/omkumanpic.jpg" alt="logo">
+                        </a>-->
                     </div>
                 </div>
             </div>
@@ -207,18 +307,26 @@
                                                 </li>
                                                 <li class="github"><a href="https://github.com/OmMkuman1902"><i data-feather="github"></i></a>
                                                 </li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
+                                    
                                     <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6 col-12 mt_mobile--30">
-                                       <!-- <div class="skill-share-inner">
-                                            <span class="title">best skill on</span>
+                                     
+                                       <div class="skill-share-inner">
+                                            <span class="title">Have a look at my resume</span>
                                             <ul class="skill-share d-flex liststyle">
-                                                <li><img src="assets/images/icons/github-11-512.png" alt="Icons Images"></li>
+                                                <div style="text-align: center; margin-top: 10px;">
+                                                    <a href="assets\Om-Kuman-Resume-edited.pdf" download="Om-Kuman-Resume-edited.pdf" class="download-btn">
+                                                        Download Resume
+                                                    </a>
+                                                </div>
+                                                <!--<li><img src="assets/images/icons/github-11-512.png" alt="Icons Images"></li>
                                                 <li><img src="assets/images/icons/icons-02.png" alt="Icons Images"></li>
-                                                <li><img src="assets/images/icons/icons-03.png" alt="Icons Images"></li>
+                                                <li><img src="assets/images/icons/icons-03.png" alt="Icons Images"></li>-->
                                             </ul>
-                                        </div>-->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1867,8 +1975,10 @@
                                     <i data-feather="chevron-right"></i>
                                 </a>
                             </div>
-
+                                
+                            
                         </div>
+                        
                         <!-- End of .text-content -->
                     </div>
                 </div>
